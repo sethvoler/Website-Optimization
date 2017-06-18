@@ -503,9 +503,13 @@ window.addEventListener('scroll', updatePositions);
 // 当页面加载时生成披萨滑窗
 // 将每一次滚动渲染200个背景披萨减少为30个
 document.addEventListener('DOMContentLoaded', function() {
+  // 获取浏览器可见区域高
+  var _height = document.body.clientHeight;
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 30; i++) {
+  //根据浏览器高度动态生成披萨数量
+  var _num = _height / s * cols;
+  for (var i = 0; i < _num; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
