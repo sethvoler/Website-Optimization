@@ -504,7 +504,8 @@ window.addEventListener('scroll', updatePositions);
 // 将每一次滚动渲染200个背景披萨减少为30个
 document.addEventListener('DOMContentLoaded', function() {
   // 获取浏览器可见区域高
-  var _height = document.body.clientHeight;
+  // 获取浏览器高度的方法由document.body.clientzheight改为window.innerHeight
+  var _height = window.innerHeight;
   var cols = 8;
   var s = 256;
   //根据浏览器高度动态生成披萨数量
